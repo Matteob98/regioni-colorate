@@ -1,0 +1,109 @@
+<html>
+<head>
+	<style xmlns="http://www.w3.org/2000/svg">
+    stroke: #555;
+  	</style>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript">
+			var newData = [['Code', 'Country', 'Level']];
+			var colorsList = []; //Contiene i colori da inserire nella mappa (es. se nessuna regione è bianca non inserisce il colore bianco)
+			// call java function from javascript
+			AndroidNativeCode.getValueJson();
+			// this function is used to send data from java class to html page using javascript
+			function setJson(Jsonobject)
+		   {
+
+				for (var n =0; n < Jsonobject.length; n++)
+				{
+					// put the data in DataTable
+				   newData.push(
+					   [Jsonobject[n].Code,
+					   Jsonobject[n].Region ,
+					   parseInt(Jsonobject[n].Level)
+				   ]);
+				}
+
+				if (Jsonobject.some((element) => parseInt(element.Level) === 0)) {
+					colorsList.push('#FFFFFF');
+				}
+				if (Jsonobject.some((element) => parseInt(element.Level) === 1)) {
+					colorsList.push('#FFEB3B');
+				}
+				if (Jsonobject.some((element) => parseInt(element.Level) === 2)) {
+					colorsList.push('#FF9800');
+				}
+				if (Jsonobject.some((element) => parseInt(element.Level) === 3)) {
+					colorsList.push('#F44336');
+				}
+
+		   }
+
+		   function call(abc) {
+
+			document.getElementById('msg_call').innerHTML = 'You clicked '+abc;
+		   }
+		  function drawRegionsMap() {
+
+			  var data;
+			  data = new google.visualization.DataTable();
+
+			  // determine the number of rows and columns.
+			  var numRows = newData.length;
+			  var numCols = newData[0].length;
+
+			  // in this case the first two columns are of type 'string'.
+			  data.addColumn('string', newData[0][0]);
+			  data.addColumn('string', newData[0][1]);
+			  // the third column is of type 'number'
+			  data.addColumn('number', newData[0][2]);
+
+			  // now add the rows.
+			  for (var i = 1; i < numRows; i++)
+				data.addRow(newData[i]);
+
+			var options = {
+				region: 'IT',
+				displayMode: "regions",
+				resolution: "provinces",
+				colorAxis: {
+					colors: colorsList
+				},
+				sizeAxis: { minValue: 0, maxValue: colorsList.length },
+				backgroundColor: '#ffffff',
+				datalessRegionColor: 'transparent',
+				defaultColor: '#ffffff',
+				legend: "none",
+				tooltip: {
+					trigger: 'none'
+				}
+			};
+
+			var container = document.getElementById('regions_div');
+			var chart = new google.visualization.GeoChart(container);
+
+			/*
+			google.visualization.events.addListener(chart, 'ready', function () {
+				var countries = container.getElementsByTagName('path');
+				Array.prototype.forEach.call(countries, function(path) {
+				path.setAttribute('stroke', 'transparent');
+				});
+			}); */
+
+			google.visualization.events.addListener(chart, 'select', function () {
+				var selection = chart.getSelection();
+				if (selection.length > 0) {
+					AndroidNativeCode.sendData(data.getValue(selection[0].row, 2)); //Invia il colore ad android
+				}
+			});
+
+		   chart.draw(data, options);
+		}
+		google.charts.load('visualization', '1', {packages: ['geochart'], callback: drawRegionsMap});
+
+		</script>
+</head>
+<body >
+<div id="regions_div"></div>
+<div id="msg_call" ></div>
+</body>
+</html>

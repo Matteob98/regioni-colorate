@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Regioni Colorate</string>
+    <string name="home_page_title">Scegli una regione</string>
+    <string name="faq">Faq</string>
+    <string name="news">News</string>
+    <string name="info">Info</string>
+    <string name="home">Home</string>
+    <string name="white_regions">Regioni bianche</string>
+    <string name="yellow_regions">Regioni gialle</string>
+    <string name="orange_regions">Regioni arancioni</string>
+    <string name="red_regions">Regioni rosse</string>
+</resources>

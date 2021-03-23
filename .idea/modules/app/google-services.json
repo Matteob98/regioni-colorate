@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1068386113212",
+    "firebase_url": "https://regioni-colorate-default-rtdb.firebaseio.com",
+    "project_id": "regioni-colorate",
+    "storage_bucket": "regioni-colorate.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1068386113212:android:76d0a427d0d070003322b9",
+        "android_client_info": {
+          "package_name": "com.unitelma.regionicolorate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1068386113212-o2p3jt5m3r3bt5bjqmq9dbfh2est7fdu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.unitelma.regionicolorate",
+            "certificate_hash": "2ed56033b677d5d7e166a2dabcceb68c6124f8e8"
+          }
+        },
+        {
+          "client_id": "1068386113212-i49snnkd0ev9ltqnb54pui2tsta4bboo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2R-zCTshpapdIckFMXBUCZvj-IpDhyuk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1068386113212-i49snnkd0ev9ltqnb54pui2tsta4bboo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
