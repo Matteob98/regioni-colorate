@@ -1,4 +1,4 @@
-package com.italianappsw.regionicolorate;
+package com.italianappsw.regionicolorate.models;
 
 public class Region {
     public String code;

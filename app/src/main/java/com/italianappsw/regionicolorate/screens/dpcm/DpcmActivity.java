@@ -1,4 +1,4 @@
-package com.italianappsw.regionicolorate;
+package com.italianappsw.regionicolorate.screens.dpcm;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -10,7 +10,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -20,6 +19,12 @@ import com.google.android.play.core.review.ReviewManager;
 import com.google.android.play.core.review.ReviewManagerFactory;
 import com.google.android.play.core.tasks.OnCompleteListener;
 import com.google.android.play.core.tasks.Task;
+import com.italianappsw.regionicolorate.R;
+import com.italianappsw.regionicolorate.models.Rule;
+import com.italianappsw.regionicolorate.rules.OrangeRules;
+import com.italianappsw.regionicolorate.rules.RedRules;
+import com.italianappsw.regionicolorate.rules.WhiteRules;
+import com.italianappsw.regionicolorate.rules.YellowRules;
 
 import java.util.ArrayList;
 import java.util.List;

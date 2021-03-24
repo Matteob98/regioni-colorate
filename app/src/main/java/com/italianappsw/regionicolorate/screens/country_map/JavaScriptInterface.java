@@ -1,4 +1,4 @@
-package com.italianappsw.regionicolorate;
+package com.italianappsw.regionicolorate.screens.country_map;
 
 import android.app.Activity;
 import android.content.Context;
@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.util.Log;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
+
+import com.italianappsw.regionicolorate.screens.dpcm.DpcmActivity;
+import com.italianappsw.regionicolorate.models.Region;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -64,7 +67,7 @@ public class JavaScriptInterface {
      */
     @JavascriptInterface
     public void sendData(String data) {
-        Intent intent=DpcmActivity.getIntentInstance(mContext, data);
+        Intent intent= DpcmActivity.getIntentInstance(mContext, data);
         mActivity.startActivity(intent);
     }
 

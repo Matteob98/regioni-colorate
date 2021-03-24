@@ -1,4 +1,4 @@
-package com.italianappsw.regionicolorate;
+package com.italianappsw.regionicolorate.screens.country_map;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -18,6 +18,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.italianappsw.regionicolorate.R;
+import com.italianappsw.regionicolorate.models.Region;
+import com.italianappsw.regionicolorate.rules.*;
 
 import java.util.ArrayList;
 

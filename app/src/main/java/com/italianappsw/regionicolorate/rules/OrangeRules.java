@@ -1,11 +1,14 @@
-package com.italianappsw.regionicolorate;
+package com.italianappsw.regionicolorate.rules;
+
+import com.italianappsw.regionicolorate.models.Rule;
+import com.italianappsw.regionicolorate.utilities.VALUE;
 
 import java.util.ArrayList;
 import java.util.List;
 
-class WhiteRules {
+public class OrangeRules {
 
-    static List<Rule>
+    public static List<Rule>
             commercial_activities = new ArrayList<>(),
             sportive_activities = new ArrayList<>(),
             events = new ArrayList<>(),

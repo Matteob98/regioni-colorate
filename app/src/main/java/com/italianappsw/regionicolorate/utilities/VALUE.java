@@ -1,4 +1,4 @@
-package com.italianappsw.regionicolorate;
+package com.italianappsw.regionicolorate.utilities;
 
 public enum VALUE {
     OPEN,
