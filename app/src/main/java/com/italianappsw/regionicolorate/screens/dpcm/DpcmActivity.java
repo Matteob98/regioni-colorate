@@ -36,7 +36,7 @@ public class DpcmActivity extends AppCompatActivity {
     private static final String REVIEW_PREFERENCE_KEY = "in-app-key";
     private static final String NO_REVIEW_PREFERENCE = "no-review";
     private final String
-            PLAY_STORE_ADDRESS ="https://play.google.com/store/apps/details?id=com.italianswapp.yourtraining";
+            PLAY_STORE_ADDRESS ="https://play.google.com/store/apps/details?id=com.italianappsw.regionicolorate";
 
     private Toolbar mToolbar;
     private String regionColor;
