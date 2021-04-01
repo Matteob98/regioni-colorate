@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -34,7 +35,8 @@ public class DpcmActivity extends AppCompatActivity {
     private static final String REGION_COLOR_KEY = "COLORKEY";
     private static final String REVIEW_PREFERENCE_KEY = "in-app-key";
     private static final String NO_REVIEW_PREFERENCE = "no-review";
-
+    private final String
+            PLAY_STORE_ADDRESS ="https://play.google.com/store/apps/details?id=com.italianswapp.yourtraining";
 
     private Toolbar mToolbar;
     private String regionColor;
@@ -268,7 +270,10 @@ public class DpcmActivity extends AppCompatActivity {
                 .setPositiveButton("SI", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        startReviewFlow();
+                        Intent viewIntent =
+                                new Intent("android.intent.action.VIEW",
+                                        Uri.parse(PLAY_STORE_ADDRESS));
+                        startActivity(viewIntent);
                     }
                 })
                 .show();
